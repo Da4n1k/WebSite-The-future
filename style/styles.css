@@ -133,12 +133,59 @@ body {
   background: transparent;
   cursor: pointer;
 }
-.main_page .text_photo_box .photo_block {
+.main_page .text_photo_box .slider_photo {
   width: 50%;
   height: 100vh;
-  background: url(../resource/image/shooterStarWars2.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main_page .text_photo_box .slider_photo .item {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.main_page .text_photo_box .slider_photo .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main_page .text_photo_box .slider_photo #last,
+.main_page .text_photo_box .slider_photo #next {
+  width: 40px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  background-color: rgba(255, 255, 255, 0.699);
+  font-size: 25px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.5s ease-in-out;
+}
+.main_page .text_photo_box .slider_photo #last {
+  left: 0;
+}
+.main_page .text_photo_box .slider_photo #next {
+  right: 0;
+}
+.main_page .text_photo_box .slider_photo #last:hover,
+.main_page .text_photo_box .slider_photo #next:hover {
+  background-color: #dddddd;
 }
 .main_page .down_block {
   position: absolute;
