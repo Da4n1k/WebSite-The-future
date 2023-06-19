@@ -8,14 +8,31 @@
 </head>
 <body>
 
+    <nav class="navbar">
+        <a id="clickNavBar">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <div class="menu">
+            <a href="">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="">
+                <i class="fa-solid fa-hurricane"></i>
+            </a>
+            <a href="">
+                <i class="fa-solid fa-store"></i>
+            </a>
+            <a href="">
+                <i class="fa-solid fa-user-tie"></i>
+            </a>
+        </div>
+    </nav>
+
     <section class="main_page">
         <div class="up_block">
             <h1 class="logo">
                 future co.
             </h1>
-            <span class="slide_menu">
-                <i class="fa-solid fa-bars"></i>
-            </span>
         </div>
         <div class="text_photo_box">
             <div class="text_block">
@@ -29,9 +46,15 @@
                     <button id="btn_more">see more</button>
 
                     <div class="video_start">
-                        <button id="btn_start_video">
+                        <button id="btn_start_video" onclick="playMainVideo()">
                             <i class="fa-regular fa-circle-play"></i>
                         </button>
+                        <div class="box_shadow_video">
+                            <iframe width="1024" height="600" src="https://www.youtube.com/embed/LWiM-LuRe6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                            <i class="fa-regular fa-circle-xmark" onclick="playMainVideo()"></i>
+                        </div>
+
                         <div class="prewiev_name">
                             <p>the future of technology</p>
                             <p class="prewiev_duration">2:35 minutes</p> <!--times video on js code-->

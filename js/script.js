@@ -34,5 +34,24 @@ function slider(n){
 
 }
 
-
 slider(indexSlide)
+
+function playMainVideo(){
+    let boxVideo = document.getElementsByClassName("box_shadow_video")[0]
+
+    if(boxVideo.style.display != "flex"){
+        boxVideo.style.display = "flex"
+    }else{
+        boxVideo.style.display = "none"
+    }
+
+}
+
+document.querySelector("#clickNavBar").addEventListener("click", () => {
+    let menu = document.getElementsByClassName("menu")[0]
+    if(menu.style.maxHeight == "240px"){
+        menu.style.maxHeight = "0px";
+    }else{
+        menu.style.maxHeight = "240px";
+    }
+})
