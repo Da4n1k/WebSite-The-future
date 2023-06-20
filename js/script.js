@@ -55,3 +55,15 @@ document.querySelector("#clickNavBar").addEventListener("click", () => {
         menu.style.maxHeight = "240px";
     }
 })
+
+
+let videoPlayer = document.getElementById("player")
+
+function playVideo(){
+    videoPlayer.play()
+    
+}
+
+function stopVideo(){
+    videoPlayer.stop()
+}
