@@ -57,13 +57,54 @@ document.querySelector("#clickNavBar").addEventListener("click", () => {
 })
 
 
-let videoPlayer = document.getElementById("player")
+// videoplayer (beta)
+let areaVideo = document.querySelector(".video_block")
+let videoPlayer = document.getElementById("videoPlayer")
+let bntPlayVideo = document.getElementById("play")
+let bntStopVideo = document.getElementById("stop")
+let bntReplayVideo = document.getElementById("replay")
 
-function playVideo(){
+// btn_play video
+bntPlayVideo.addEventListener("click", () => {
     videoPlayer.play()
-    
-}
+    bntPlayVideo.style.display = "none"
+    bntStopVideo.style.display = "block"
+})
 
-function stopVideo(){
-    videoPlayer.stop()
-}
+// btn_stop video
+bntStopVideo.addEventListener("click", () => {
+    videoPlayer.pause()
+    bntStopVideo.style.display = "none"
+    bntPlayVideo.style.display = "block"
+})
+// btn_replay video
+bntReplayVideo.addEventListener("click", () => {
+    videoPlayer.play()
+    bntReplayVideo.style.display = "none"
+    bntStopVideo.style.display = "block"
+})
+
+// ended video
+videoPlayer.addEventListener("ended", () =>{
+    bntStopVideo.style.display = "none"
+    bntReplayVideo.style.display = "block"
+})
+
+// show btn on area with video
+areaVideo.addEventListener("mouseenter", () => {
+    let btnArea = areaVideo.querySelectorAll("button")
+    for(let i = 0; i < btnArea.length; i++){
+        btnArea[i].style.opacity = "1"
+    }
+  });
+  
+areaVideo.addEventListener("mouseleave", () => {
+    let btnArea = areaVideo.querySelectorAll("button")
+    for(let i = 0; i < btnArea.length; i++){   
+        if(videoPlayer.paused){
+            btnArea[i].style.opacity = "1"
+        }else{
+            btnArea[i].style.opacity = "0"
+        }
+    }
+  });
