@@ -17,7 +17,9 @@
   --ssp-color-dark: black;
   --ssp-color-light: white;
   --btn-click-bg: black;
-  --bnt-photo-bg: #eab861;
+  --btn-photo-bg: #eab861;
+  --btn-photo-bg-hover: #c49a52;
+  --btn-photo-bg-active: #a17f44;
   --block-bg-light: white;
   --block-bg-dark: black;
   --block-addit-bg: rgba(234, 184, 97);
@@ -33,7 +35,8 @@ body {
 }
 p,
 button,
-a {
+a,
+label {
   font-family: var(--ssp-regular);
 }
 h1,
@@ -74,7 +77,7 @@ h4 {
   padding: 5px;
 }
 .navbar .menu i:hover {
-  color: var(--bnt-photo-bg);
+  color: var(--btn-photo-bg);
 }
 .main_page {
   position: relative;
@@ -335,7 +338,7 @@ h4 {
   color: #bebebe;
 }
 .technology_block .video_block button:active {
-  color: #aaaaaa;
+  color: #6e6e6e;
 }
 .technology_block .video_block #stop {
   display: none;
@@ -377,7 +380,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bnt-photo-bg);
+  background-color: var(--btn-photo-bg);
 }
 .techno_info_block .mini_block {
   width: 100%;
@@ -435,13 +438,22 @@ h4 {
   border: none;
   color: var(--ssp-color-light);
   background-color: var(--btn-bg-dark);
+  transition: all 0.5s ease-in-out;
+}
+.store_block .description_store .text button:hover {
+  color: var(--ssp-color-dark);
+  border: solid 1px var(--ssp-color-dark);
+  background-color: var(--block-bg-light);
+}
+.store_block .description_store .text button:active {
+  background-color: #c8c8c8;
 }
 .store_block .controler .descript_img {
   display: inline-block;
   font-size: 18px;
   padding: 10px;
   margin: 10px;
-  background-color: var(--bnt-photo-bg);
+  background-color: var(--btn-photo-bg);
 }
 .store_block .controler a {
   display: inline-block;
@@ -453,7 +465,14 @@ h4 {
   padding: 12px;
   margin: 10px;
   color: var(--ssp-color-dark);
-  background-color: var(--bnt-photo-bg);
+  background-color: var(--btn-photo-bg);
+  transition: all 0.2s ease-in-out;
+}
+.store_block .controler a:hover {
+  background-color: var(--btn-photo-bg-hover);
+}
+.store_block .controler a:active {
+  background-color: var(--btn-photo-bg-active);
 }
 .store_block .store_photo_one {
   grid-area: 1 / 2 / 2 / 3;
@@ -530,4 +549,117 @@ h4 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.feedback {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+.feedback .form_block {
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--btn-photo-bg);
+}
+.feedback .form_block .form_logo {
+  width: 600px;
+}
+.feedback .form_block .form_logo h1 {
+  font-size: 90px;
+}
+.feedback .form_block .form_logo h2 {
+  font-size: 70px;
+  font-family: var(--ssp-regular);
+  font-weight: 100;
+  padding-bottom: 20px;
+}
+.feedback .form_block .form_logo p {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 100;
+  color: white;
+}
+.feedback .form_block form {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+  gap: 30px;
+}
+.feedback .form_block form .form_input {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.feedback .form_block form .form_input label {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--ssp-color-light);
+  background-color: var(--btn-bg-dark);
+}
+.feedback .form_block form .form_input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.feedback .form_block form input[type=button] {
+  width: 120px;
+  height: 50px;
+  margin-top: 15px;
+  border: none;
+  font-size: 18px;
+  font-family: var(--ssp-regular);
+  text-transform: uppercase;
+  color: var(--ssp-color-light);
+  background-color: var(--btn-bg-dark);
+  transition: all 0.4s ease-in-out;
+}
+.feedback .form_block form input[type=button]:hover {
+  color: var(--ssp-color-dark);
+  border: solid 1px var(--ssp-color-dark);
+  background-color: var(--block-bg-light);
+}
+.feedback .form_block form input[type=button]:active {
+  background-color: #c8c8c8;
+}
+.feedback .photo_form {
+  width: 40%;
+  height: 100vh;
+  background: url(../resource/image/earth.jpg);
+  background-position: 30%;
+  background-size: cover;
+}
+.info_startup {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.info_startup .comp_info {
+  margin-left: 250px;
+}
+.info_startup .comp_info .comp_logo {
+  font-size: 50px;
+}
+.info_startup .comp_info .comp_logo span {
+  font-weight: bold;
+}
+.info_startup .comp_info p {
+  padding: 15px;
+  font-size: 16px;
 }

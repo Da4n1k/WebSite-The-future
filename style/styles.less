@@ -20,7 +20,9 @@
     --ssp-color-dark: black;
     --ssp-color-light: white;
     --btn-click-bg: black;
-    --bnt-photo-bg: rgb(234,184,97);
+    --btn-photo-bg: rgb(234,184,97);
+    --btn-photo-bg-hover: rgb(196, 154, 82);
+    --btn-photo-bg-active: rgb(161, 127, 68);
     --block-bg-light: white;
     --block-bg-dark: black;
     --block-addit-bg: rgba(234,184,97);
@@ -36,7 +38,7 @@ body{
     flex-direction: column;
 }
 
-p, button, a{
+p, button, a, label{
     font-family: var(--ssp-regular);
 }
 
@@ -79,7 +81,7 @@ h1, h2, h3, h4{
         }
 
         i:hover{
-            color: var(--bnt-photo-bg)
+            color: var(--btn-photo-bg)
         }
 
     }
@@ -384,7 +386,7 @@ h1, h2, h3, h4{
         }
 
         button:active{
-            color: rgb(170, 170, 170);
+            color: rgb(110, 110, 110);
         }
 
         #stop{
@@ -434,7 +436,7 @@ h1, h2, h3, h4{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bnt-photo-bg);
+    background-color: var(--btn-photo-bg);
 
     .mini_block{
         width: 100%;
@@ -495,6 +497,17 @@ h1, h2, h3, h4{
                 border: none;
                 color: var(--ssp-color-light);
                 background-color: var(--btn-bg-dark);
+                transition: all 0.5s ease-in-out;
+            }
+
+            button:hover{
+                color: var(--ssp-color-dark);
+                border: solid 1px var(--ssp-color-dark);
+                background-color: var(--block-bg-light);
+            }
+
+            button:active{
+                background-color: rgb(200, 200, 200);
             }
         }
     }
@@ -505,7 +518,7 @@ h1, h2, h3, h4{
             font-size: 18px;
             padding: 10px;
             margin: 10px;
-            background-color: var(--bnt-photo-bg);
+            background-color: var(--btn-photo-bg);
         }
 
         a{
@@ -518,7 +531,14 @@ h1, h2, h3, h4{
             padding: 12px;
             margin: 10px;
             color: var(--ssp-color-dark);
-            background-color: var(--bnt-photo-bg);
+            background-color: var(--btn-photo-bg);
+            transition: all 0.2s ease-in-out;
+        }
+        a:hover{
+            background-color: var(--btn-photo-bg-hover);
+        }
+        a:active{
+            background-color: var(--btn-photo-bg-active);
         }
     }
 
@@ -607,4 +627,133 @@ h1, h2, h3, h4{
             background-size: cover;
         }
     }  
+}
+
+.feedback{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+    .form_block{
+        width: 60%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        background-color: var(--btn-photo-bg);
+        .form_logo{
+            width: 600px;
+
+            h1{
+                font-size: 90px;
+            }
+    
+            h2{
+                font-size: 70px;
+                font-family: var(--ssp-regular);
+                font-weight: 100;
+                padding-bottom: 20px;
+            }
+
+            p{
+                width: 100%;
+                font-size: 18px;
+                font-weight: 100;
+                color: white;
+            }
+        }
+
+        form{
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 20px;
+            gap: 30px;
+
+            .form_input{
+                width: 100%;
+                height: 50px;
+                display: flex;
+                flex-direction: row;
+
+                label{
+                    width: 150px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    color: var(--ssp-color-light);
+                    background-color: var(--btn-bg-dark);
+                }
+
+                input{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    font-size: 20px;
+                    padding-left: 10px;
+                }
+            }
+
+            input[type=button]{
+                width: 120px;
+                height: 50px;
+                margin-top: 15px;
+                border: none;
+                font-size: 18px;
+                font-family: var(--ssp-regular);
+                text-transform: uppercase;
+                color: var(--ssp-color-light);
+                background-color: var(--btn-bg-dark);
+                transition: all 0.4s ease-in-out;
+            }
+
+            input[type=button]:hover{
+                color: var(--ssp-color-dark);
+                border: solid 1px var(--ssp-color-dark);
+                background-color: var(--block-bg-light);
+            }
+
+            input[type=button]:active{
+                background-color: rgb(200, 200, 200);
+            }
+        }
+    }
+
+    .photo_form{
+        width: 40%;
+        height: 100vh;
+        background: url(../resource/image/earth.jpg);
+        background-position: 30%;
+        background-size: cover; 
+    }
+}
+
+.info_startup{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    .comp_info{
+        margin-left: 250px;
+
+        .comp_logo{
+            font-size: 50px;
+            span{
+                font-weight: bold;
+            }
+        }
+        p{
+            padding: 15px;
+            font-size: 16px;
+        }
+    }
 }
