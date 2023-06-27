@@ -1,7 +1,7 @@
 # Technology Business - Website
 
 ### I was inspired by the design of the website:
-[<img src="https://simpleicons.org/icons/behance.svg" alt="behance" style="width:24px; height:24px; background: white;">](https://www.behance.net/gallery/168164993/Technology-Business-Website)
+[<img src="https://cdn.simpleicons.org/behance/0059FF" alt="behance" style="width:30px; height:30px;">](https://www.behance.net/gallery/168164993/Technology-Business-Website)
 
 Preview site:
 
