@@ -1,7 +1,7 @@
 let indexSlide = 1
 
 function nextClick(){
-    slider(indexSlide += 1) // now slide + 1 = nexy slide
+    slider(indexSlide += 1) // now slide + 1 = next slide
 }
 
 function lastClick(){
@@ -34,8 +34,9 @@ function slider(n){
 
 }
 
-slider(indexSlide)
+slider(indexSlide) // slider
 
+// pre-video main block
 function playMainVideo(){
     let boxVideo = document.getElementsByClassName("box_shadow_video")[0]
 
@@ -47,6 +48,7 @@ function playMainVideo(){
 
 }
 
+// navbar menu
 document.querySelector("#clickNavBar").addEventListener("click", () => {
     let menu = document.getElementsByClassName("menu")[0]
     if(menu.style.maxHeight == "240px"){
@@ -107,4 +109,45 @@ areaVideo.addEventListener("mouseleave", () => {
             btnArea[i].style.opacity = "0"
         }
     }
-  });
+});
+
+function validation(form){
+
+    function checkError(input){
+        if(input.style.borderColor == "red"){
+            input.style.borderColor = "white"
+            input.style.borderWidth = "1px"
+        }
+    }
+
+    function createError(input){
+        input.style.borderColor = "red"
+        input.style.borderWidth = "2px"
+    }
+
+    let result = true
+    form.querySelectorAll('input').forEach(element => {
+        checkError(element)
+        if(element.value == ""){
+            createError(element)
+            result = false
+        }
+    });
+
+    return result
+}
+
+document.getElementById("add-form").addEventListener("submit", function(event) {
+    event.preventDefault()
+
+    if(validation(this)){
+        let block = document.querySelector(".modal_message")
+        block.style.display = "flex"
+        block.style.opacity = "1"
+    }
+})
+
+document.getElementById('closemodal').addEventListener("click", () => {
+    let block = document.querySelector('.modal_message')
+    block.style.display = "none"
+})

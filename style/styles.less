@@ -30,6 +30,10 @@
     --btn-bg-light: white;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     position: relative;
     display: flex;
@@ -69,7 +73,6 @@ h1, h2, h3, h4{
     }
 
     .menu{
-        // height: 240px;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -629,6 +632,36 @@ h1, h2, h3, h4{
     }  
 }
 
+.modal_message{
+    width: 400px;
+    height: 70px;
+    position: fixed;
+    display: none;
+    top: 30px;
+    background-color: var(--block-bg-light);
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+    
+    p{
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    i{
+        padding: 10px;
+        font-size: 22px;
+    }
+    
+    i:hover{
+        color: rgb(90, 90, 90);
+    }
+
+    i:active{
+        color: rgb(70, 70, 70);
+    }
+
+}
+
 .feedback{
     width: 100%;
     height: 100vh;
@@ -694,14 +727,14 @@ h1, h2, h3, h4{
 
                 input{
                     width: 100%;
-                    border: none;
+                    border: 1px solid white;
                     outline: none;
                     font-size: 20px;
                     padding-left: 10px;
                 }
             }
 
-            input[type=button]{
+            input[type=submit]{
                 width: 120px;
                 height: 50px;
                 margin-top: 15px;
@@ -714,13 +747,13 @@ h1, h2, h3, h4{
                 transition: all 0.4s ease-in-out;
             }
 
-            input[type=button]:hover{
+            input[type=submit]:hover{
                 color: var(--ssp-color-dark);
                 border: solid 1px var(--ssp-color-dark);
                 background-color: var(--block-bg-light);
             }
 
-            input[type=button]:active{
+            input[type=submit]:active{
                 background-color: rgb(200, 200, 200);
             }
         }

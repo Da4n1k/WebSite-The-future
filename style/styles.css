@@ -26,6 +26,9 @@
   --btn-bg-dark: black;
   --btn-bg-light: white;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   position: relative;
   display: flex;
@@ -550,6 +553,30 @@ h4 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.modal_message {
+  width: 400px;
+  height: 70px;
+  position: fixed;
+  display: none;
+  top: 30px;
+  background-color: var(--block-bg-light);
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+}
+.modal_message p {
+  font-size: 18px;
+  padding: 10px;
+}
+.modal_message i {
+  padding: 10px;
+  font-size: 22px;
+}
+.modal_message i:hover {
+  color: #5a5a5a;
+}
+.modal_message i:active {
+  color: #464646;
+}
 .feedback {
   width: 100%;
   height: 100vh;
@@ -611,12 +638,12 @@ h4 {
 }
 .feedback .form_block form .form_input input {
   width: 100%;
-  border: none;
+  border: 1px solid white;
   outline: none;
   font-size: 20px;
   padding-left: 10px;
 }
-.feedback .form_block form input[type=button] {
+.feedback .form_block form input[type=submit] {
   width: 120px;
   height: 50px;
   margin-top: 15px;
@@ -628,12 +655,12 @@ h4 {
   background-color: var(--btn-bg-dark);
   transition: all 0.4s ease-in-out;
 }
-.feedback .form_block form input[type=button]:hover {
+.feedback .form_block form input[type=submit]:hover {
   color: var(--ssp-color-dark);
   border: solid 1px var(--ssp-color-dark);
   background-color: var(--block-bg-light);
 }
-.feedback .form_block form input[type=button]:active {
+.feedback .form_block form input[type=submit]:active {
   background-color: #c8c8c8;
 }
 .feedback .photo_form {
