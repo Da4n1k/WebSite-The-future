@@ -74,7 +74,7 @@ h4 {
   flex-direction: column;
   text-align: center;
   max-height: 0;
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 .navbar .menu a {
   padding: 5px;
